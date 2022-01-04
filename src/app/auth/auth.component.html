@@ -1,0 +1,50 @@
+<ng-template appPlaceholder></ng-template>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset">
+    <!-- <div style="padding: 0.8rem; margin: 30px 0px;" class="alert alert-danger" *ngIf="error">
+      <p style="padding: 0; margin: 0;">{{ error }}</p>
+    </div> -->
+    <!-- <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert> -->
+    <div *ngIf="isLoading" style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="email"></label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          ngModel name="email"
+          required
+          email
+        >
+      </div>
+      <div class="form-group">
+        <label for="password"></label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          ngModel name="password"
+          required
+          minlength="8"
+        >
+      </div>
+      <div class="py-3">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="f.invalid">
+          {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </button> |
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="onSwitchMode()">
+          Swithc to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

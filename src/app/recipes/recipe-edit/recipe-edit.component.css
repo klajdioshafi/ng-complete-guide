@@ -1,0 +1,19 @@
+.row {
+  margin-top: 10px;
+}
+
+.ingredients {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.img-responsive {
+  width: 100%;
+  height: fit-content;
+}

@@ -1,0 +1,7 @@
+.dropdown-item {
+  width: 100%;
+}
+
+.dropdown-menu {
+  left: calc(100% - 160px);
+}
